@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "author": "vladimirnehoc@mail.com",
   "scripts": {
-    "start": "node server.js",
+    "start": "webpack && node index.js",
     "dev": "webpack --mode development --watch",
     "webpack": "webpack"
   },
