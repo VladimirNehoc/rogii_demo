@@ -1,0 +1,92 @@
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  & > .pagination {
+    font-size: 16px;
+  }
+
+  &_items-per-page {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+
+    & > select {
+      border: none;
+      margin: 0;
+      padding: 15px 0;
+      outline: none;
+      font-size: 16px;
+    }
+  }
+}
+
+.table-container {
+  overflow: auto;
+  width: 100%;
+}
+
+.main-table {
+  margin-bottom: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+
+  & th, & td {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    word-wrap: break-word;
+    width: fit-content;
+  }
+
+  & th {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+
+    &.over > * {
+      pointer-events: none;
+    }
+
+    &.over.over-right:after, &.over.over-left:after {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 3px;
+      top: 0;
+      background-color: #777;
+    }
+
+    &.over.over-left:after {
+      left: -2px;
+    }
+
+    &.over.over-right:after {
+      right: -2px;
+    }
+
+    .sort-changer {
+      opacity: 0;
+      position: absolute;
+      height: 100%;
+      right: 3px;
+      top: 0;
+      transition: .2s;
+
+      &.active {
+        opacity: 1;
+      }
+    }
+
+    &:hover {
+      .sort-changer {
+        opacity: 1;
+      }
+    }
+  }
+
+  & td {
+    vertical-align: top;
+  }
+}

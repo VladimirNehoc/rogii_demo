@@ -1,0 +1,21 @@
+.sort-changer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: 10px;
+	line-height: 10px;
+	color: #999;
+
+	&_up {
+		
+	}
+
+	&_down {
+		transform: rotate(180deg);
+	}
+
+	&_up.active, &_down.active {
+		color: rgb(51, 116, 255);
+	}
+}
